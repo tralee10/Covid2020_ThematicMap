@@ -4,13 +4,13 @@ This repository presents two interactive thematic web maps that visualize COVID-
 
 ## Maps
 
-**Choropleth Map** (Case Rates): https://travlee10.github.io/Covid2020_ThematicMap/map1.html
+**Choropleth Map** (Case Rates): https://tralee10.github.io/Covid2020_ThematicMap/map1.html
 
 The first map is a choropleth map that visualizes COVID-19 case rates by county. Counties are classified and symbolized using a color scheme that represents the number of cases per thousand residents. Users can click on any county to view a popup displaying the county name and its corresponding COVID-19 case rate.
 
 ![Cloropleth Case Rates](img/map1_cloro.png)  
 
-**Proportional Symbols Map** (Case Counts): https://travlee10.github.io/Covid2020_ThematicMap/map2.html
+**Proportional Symbols Map** (Case Counts): https://tralee10.github.io/Covid2020_ThematicMap/map2.html
 
 The second map is a proportional symbols map that represents total COVID-19 case counts by county. Circular symbols are scaled proportionally to the total number of reported cases, allowing users to quickly identify counties with higher case totals. Clicking on a circle opens a popup showing the county name and the total number of COVID-19 cases.
 
