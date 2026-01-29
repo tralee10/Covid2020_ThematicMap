@@ -1,4 +1,4 @@
-# US COVID-19 Case Rates & Counts (2020) Thematic Web Maps
+# COVID-19 Case Rates & Counts in the US (2020) Thematic Web Maps
 
 This repository presents two interactive thematic web maps that visualize COVID-19 case rates and total case counts across US counties in 2020. Using county-level data, the maps apply choropleth and proportional symbol mapping techniques to highlight spatial patterns in the distribution and intensity of COVID-19 cases. The maps demonstrate how interactive web mapping can be used to explore and communicate public health data through clear symbolization, legends, and user-driven interaction.
 
