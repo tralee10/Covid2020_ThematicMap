@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>US COVID-19 Rates by County in 2020</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .map-title {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            max-width: 300px;
+        }
+
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .legend div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .legend span {
+            height: 12px;
+            width: 12px;
+            margin-right: 6px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<div class="map-title">
+    <h3>COVID-19 Rates by County (2020)</h3>
+    <p>This choropleth map shows COVID-19 infection rates across U.S. counties in 2020.</p>
+    <p><strong>Click</strong> on a county to see its infection rate.</p>
+    <p><strong>Data Source:</strong> US Census Bureau</p>
+</div>
+
+<div class="legend">
+    <strong>COVID-19 Rate</strong>
+    <div><span style="background:#e0e0e0"></span>Low</div>
+    <div><span style="background:#b6b6b6"></span></div>
+    <div><span style="background:#4d4d4dcb"></span></div>
+    <div><span style="background:#474747f3"></span>High</div>
+</div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoidHJhbGVlMTAiLCJhIjoiY202cmp6MTd5MjNrMDJpcHY4N3JtZDFuNCJ9.FDnd5ftof56RdHpFHNsjxQ';
+
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [-98, 39], // continental US
+        zoom: 3,
+        minZoom: 3,
+        projection: 'albers'
+    });
+
+    map.on('load', function () {
+
+        map.addSource('covid-counties', {
+            type: 'geojson',
+            data: 'assets/us-covid-2020-rates.json'
+        });
+
+        map.addLayer({
+            id: 'covid-choropleth',
+            type: 'fill',
+            source: 'covid-counties',
+            paint: {
+                'fill-color': [
+                    'step',
+                    ['get', 'covid_rate'],
+                    '#f7fbff',
+                    1000, '#c6dbef',
+                    3000, '#6baed6',
+                    6000, '#2171b5'
+                ],
+                'fill-outline-color': '#444',
+                'fill-opacity': 0.8
+            }
+        });
+
+        // CLICK interaction (instead of hover)
+        map.on('click', 'covid-choropleth', function (e) {
+            let props = e.features[0].properties;
+
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(
+                    '<strong>County:</strong> ' + props.NAME + '<br>' +
+                    '<strong>COVID Rate:</strong> ' + props.covid_rate
+                )
+                .addTo(map);
+        });
+
+        // Change cursor on hover (optional, very light interaction)
+        map.on('mouseenter', 'covid-choropleth', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        map.on('mouseleave', 'covid-choropleth', function () {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+</script>
+
+</body>
+</html>
