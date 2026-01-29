@@ -4,7 +4,14 @@ This project presents two interactive web maps, a cloropleth map and proportiona
 
 ## Maps
 - Choropleth Map (Case Rates): https://travlee10.github.io/Covid2020_ThematicMap/map1.html
+
+![Cloropleth Case Rates](img/map1_cloro.png)  
+
+
 - Proportional Symbols Map (Case Counts): https://travlee10.github.io/Covid2020_ThematicMap/map2.html
+
+![Porportional Case Counts](img/map2_propo.png)  
+
 
 ## Features
 - Interactive popups
