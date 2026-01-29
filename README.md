@@ -39,6 +39,9 @@ List:
 - US Census Bureau
 - ACS 2018
 
+## Note
+Although clickable popups are implemented on both maps, they do not display numerical COVID-19 values. This is because the provided GeoJSON files contain only geographic coordinates and do not include attribute fields with case counts or case rate values. As a result, the popups are limited to demonstrating interactivity rather than displaying quantitative data.
+
 ## Author
 Travis Lee
 
