@@ -71,7 +71,6 @@
     <p><strong>Data Source:</strong> US Census Bureau</p>
 </div>
 
-<!-- PROPORTIONAL SYMBOL LEGEND -->
 <div class="legend">
     <strong>Total COVID-19 Cases</strong>
     <div><span style="width:6px;height:6px;"></span>1,000</div>
@@ -86,7 +85,7 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v10',
         center: [-98, 39],
-        zoom: 3,
+        zoom: 4,
         minZoom: 3,
         projection: 'albers'
     });
@@ -119,7 +118,6 @@
             }
         });
 
-        // CLICK interaction (required)
         map.on('click', 'covid-circles', function (e) {
             let props = e.features[0].properties;
 
