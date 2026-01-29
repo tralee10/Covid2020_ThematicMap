@@ -1,6 +1,6 @@
 # US COVID-19 Case Rates & Counts (2020) Thematic Web Maps
 
-This lab presents two interactive thematic web maps visualizing COVID-19 data across U.S. counties in 2020. The lab applies cartographic principles such as choropleth mapping, proportional symbol visualization, legends, and interactivity—to communicate spatial patterns in public health data. The maps are built using Mapbox GL JS and county-level data processed into GeoJSON format.
+This repository presents two interactive thematic web maps that visualize COVID-19 case rates and total case counts across US counties in 2020. Using county-level data, the maps apply choropleth and proportional symbol mapping techniques to highlight spatial patterns in the distribution and intensity of COVID-19 cases. The maps demonstrate how interactive web mapping can be used to explore and communicate public health data through clear symbolization, legends, and user-driven interaction.
 
 ## Maps
 
@@ -32,11 +32,11 @@ List:
 - Mapbox GL JS
 
 ## Data Sources
-COVID-19 case and death data are originally sourced from The New York Times COVID-19 dataset. Population data used to calculate case rates comes from the 2018 American Community Survey (ACS) 5-year estimates. County boundary data is provided by the U.S. Census Bureau. All datasets were processed and converted to GeoJSON format prior to mapping.
+COVID-19 case and death data are originally sourced from The New York Times COVID-19 dataset. Population data used to calculate case rates comes from the 2018 American Community Survey (ACS) 5-year estimates. County boundary data is provided by the US Census Bureau. All datasets were processed and converted to GeoJSON format prior to mapping.
 
 List:
 - New York Times COVID-19 data
-- U.S. Census Bureau
+- US Census Bureau
 - ACS 2018
 
 ## Author
