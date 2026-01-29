@@ -42,3 +42,6 @@ List:
 
 ## Author
 Travis Lee
+
+## Acknowledgments
+Completed as part of a web mapping lab assignment for Geog 458 and follows the instructional framework provided in Lab 3.
