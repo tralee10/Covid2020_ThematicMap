@@ -45,5 +45,7 @@ Although clickable popups are implemented on both maps, they do not display nume
 ## Author
 Travis Lee
 
-## Acknowledgments
+## Acknowledgments / AI Disclosure
 Completed as part of a web mapping lab for Geog 458 Lab 3.
+
+I used AI in this assignment to explain errors I received. I did not use AI to write or complete any components where AI use is prohibited and I am able to explain the relevant code and decisions.
